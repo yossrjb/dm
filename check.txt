@@ -1,0 +1,61 @@
+function isLeapYear(year) {
+    if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+        return `${year} is a leap year.`;
+    } else {
+        return `${year} is not a leap year.`;
+    }
+}
+****************
+function ticketPrice(age) {
+    let price;
+    if (age <= 12) {
+        price = 10;
+    } else if (age >= 13 && age <= 17) {
+        price = 15;
+    } else if (age >= 18) {
+        price = 20;
+    } else {
+        price = "Invalid age";
+    }
+    return `The ticket price is $${price}.`;
+}
+*************
+function weatherClothing(temp, isRaining) {
+    if (isRaining) {
+        return "It's raining, wear a raincoat!";
+    } else if (temp <= 10) {
+        return "It's cold, wear a jacket!";
+    } else if (temp > 10 && temp <= 20) {
+        return "It's cool, wear a sweater.";
+    } else {
+        return "It's warm, wear light clothing.";
+    }
+}
+***********************
+function fibonacci(n) {
+    if (n <= 1) {
+        return n;
+    } else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+}
+************************
+function isPalindrome(str) {
+    const cleanedStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+    
+    function checkPalindrome(s, start, end) {
+        if (start >= end) return true;
+        if (s[start] !== s[end]) return false;
+        return checkPalindrome(s, start + 1, end - 1);
+    }
+    
+    return checkPalindrome(cleanedStr, 0, cleanedStr.length - 1);
+}
+******************
+function power(base, exp) {
+    if (exp === 0) {
+        return 1;
+    } else {
+        return base * power(base, exp - 1);
+    }
+}
